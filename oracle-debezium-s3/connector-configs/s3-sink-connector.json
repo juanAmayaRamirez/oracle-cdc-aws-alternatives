@@ -1,0 +1,19 @@
+{
+    "name": "s3-sink-connector",
+    "config": {
+		"connector.class": "io.confluent.connect.s3.S3SinkConnector",
+        "aws.access.key.id":"",
+        "aws.secret.access.key":"",
+		"tasks.max": "1",
+		"topics": "server1.C__DBZUSER.CUSTOMERS",
+		"s3.region": "us-east-1",
+		"s3.bucket.name": "bluetab-amaya-1",
+		"flush.size": "65536",
+        "rotate.interval.ms": "60000",
+		"storage.class": "io.confluent.connect.s3.storage.S3Storage",
+		"format.class": "io.confluent.connect.s3.format.avro.AvroFormat",
+        "partitioner.class": "io.confluent.connect.storage.partitioner.HourlyPartitioner",
+        "locale":"es-CO",
+        "timezone":"America/Bogota"
+	}
+}
